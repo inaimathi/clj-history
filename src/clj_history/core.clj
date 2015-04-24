@@ -10,7 +10,7 @@
      (when (not (.exists f)) 
        (with-open [w (io/writer fname)]
          (.write w (with-out-str (prn zero)))))
-     {:into apply-fn :state zero :history {} :zero zero :file f})))
+     {:into apply-fn :state zero :history () :zero zero :file f})))
 
 (defn multiplex-archive [arc stream-vector]
   (assoc arc :streams stream-vector))
